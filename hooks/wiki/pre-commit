@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# This script runs from the repo root folder
+.git/hooks/pre-commit.cmd
+
+if [ $? -ne 0 ]; then
+    echo ""
+    echo "==============================================================="
+    echo "= An error has occured; stop. No commit can be made right now ="
+    echo "==============================================================="
+else
+    echo "Ok, you can push"
+fi
+
+exit 1
