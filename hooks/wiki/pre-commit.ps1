@@ -13,13 +13,13 @@ ForEach-Object {
     # Execute the script
     $obj = Start-Process $_.fullname -PassThru -wait
     
-    # Restore the previous folder
-    Pop-Location
-
     if ($obj.ExitCode -ne 0) {
         Write-Host "        An error $($obj.ExitCode) has occured in $($_.fullname)" -ForegroundColor Red;
         exit $obj.ExitCode
     }
+
+    # Restore the previous folder
+    Pop-Location
 
 }
 
@@ -36,7 +36,7 @@ if (Test-Path ".\generate_sidebar.cmd" -PathType Leaf) {
 }
 
 # Add new, updated, files
-git add .
+git commit -a -m "concatenate"
 
 # Inform the pre-commit hook of git that everything was fine
 exit 0
