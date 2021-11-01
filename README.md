@@ -2,6 +2,8 @@
 
 A hook to run concat-md and generate_sidebar when committing a wiki.
 
+![Banner](./banner.svg)
+
 * [Wiki hooks](#wiki-hooks)
 * [Author](#author)
 * [License](#license)
